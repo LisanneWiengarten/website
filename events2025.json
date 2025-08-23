@@ -1,13 +1,12 @@
 [
     {
         "@type": "Event",
-        "name": "Januarmeeting",
-        "description": "Advent of Code + Serverless mit AWS",
-        "startDate": "2025-01-27T18:30",
-        "endDate": "2025-01-27T21:00",
-        "keywords": "Vortrag, Advent of Code, AWS, Cloud",
+        "name": "März Meeting",
+        "description": "Mikrokosmos Festival - Film, Curation & Funding",
+        "speaker": "Niklas Michels",
+        "startDate": "2025-03-20T19:00",
+        "endDate": "2025-03-20T21:00",
         "eventStatus": "https://schema.org/EventScheduled",
-        "url": "https://www.linkedin.com/events/januarmeetingsoftwareentwickler7281934145226719232/about/",
         "location": {
             "@type": "Place",
             "name": "OecherLab",
@@ -22,46 +21,18 @@
         },
         "organizer": {
             "@type": "Organization",
-            "name": "Ladybugs Aachen",
-            "url": "https://www.linkedin.com/company/ladybugs-aachen/"
+            "name": "Filmmakers Aachen",
+            "url": "https://www.instagram.com/filmmakersaachen/"
         }
     },
     {
         "@type": "Event",
-        "name": "Februarmeeting",
-        "description": "Auth0 + Culture Add vs Culture Fit",
-        "startDate": "2025-02-24T18:30",
-        "endDate": "2025-02-24T21:00",
-        "keywords": "Vortrag, Auth0, Okta, Authentication, Diversity",
+        "name": "Mai Meeting",
+        "description": "Image & Impact - so läuft's bei Hat & Cap",
+        "speaker": "Daniel Carreño & FedericoDlaikan",
+        "startDate": "2025-05-08T19:00",
+        "endDate": "2025-05-08T21:00",
         "eventStatus": "https://schema.org/EventScheduled",
-        "url": "https://www.linkedin.com/events/februareventladybugs7292247868189364224/about/",
-        "location": {
-            "@type": "Place",
-            "name": "Generali Deutschland AG",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Aachenmünchener-Platz 1",
-                "addressLocality": "Aachen",
-                "postalCode": "52062",
-                "addressRegion": "Nordrhein-Westfalen",
-                "addressCountry": "Germany"
-            }
-        },
-        "organizer": {
-            "@type": "Organization",
-            "name": "Ladybugs Aachen",
-            "url": "https://www.linkedin.com/company/ladybugs-aachen/"
-        }
-    },
-    {
-        "@type": "Event",
-        "name": "Märzmeeting",
-        "description": "Pair Programming Workshop",
-        "startDate": "2025-03-31T18:30",
-        "endDate": "2025-03-31T21:00",
-        "keywords": "Pair programming, Workshop, Hands-on",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "url": "https://www.linkedin.com/events/workshop-pairprogramming7303020331798085632/about/",
         "location": {
             "@type": "Place",
             "name": "OecherLab",
@@ -76,8 +47,34 @@
         },
         "organizer": {
             "@type": "Organization",
-            "name": "Ladybugs Aachen",
-            "url": "https://www.linkedin.com/company/ladybugs-aachen/"
+            "name": "Filmmakers Aachen",
+            "url": "https://www.instagram.com/filmmakersaachen/"
+        }
+    },
+    {
+        "@type": "Event",
+        "name": "Juni Meeting",
+        "description": "VFX bei der Julien Bam Serie 'Der Mann im Mond'",
+        "speaker": "Shawn Bu",
+        "startDate": "2025-06-26T19:00",
+        "endDate": "2025-06-26T21:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+            "@type": "Place",
+            "name": "Cafe & Bar zuhause",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sandkaulstraße 109/111",
+                "addressLocality": "Aachen",
+                "postalCode": "52062",
+                "addressRegion": "Nordrhein-Westfalen",
+                "addressCountry": "Germany"
+            }
+        },
+        "organizer": {
+            "@type": "Organization",
+            "name": "Filmmakers Aachen",
+            "url": "https://www.instagram.com/filmmakersaachen/"
         }
     }
 ]

@@ -4,8 +4,8 @@ function createNavbar() {
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="images/favicon-32x32.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-                Ladybugs Aachen
+                <img src="TODO" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                Filmmakers Aachen
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -30,8 +30,7 @@ function createFooter() {
     return `
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container">
-            <span class="text-muted">Softwareentwicklerinnentreff Ladybug Aachen. A community for women in software engineering in Aachen,
-                Germany</span>
+            <span class="text-muted">Filmmakers Aachen Meetup. A community for film enthusiasts in Aachen, Germany</span>
         </div>
     </footer>`;
 }

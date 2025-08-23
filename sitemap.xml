@@ -3,33 +3,33 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://ladybugs-aachen.de/</loc>
-        <lastmod>2025-06-14</lastmod>
+        <loc>TODO</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
     <!-- Section: Home -->
     <url>
-        <loc>https://ladybugs-aachen.de/#home</loc>
+        <loc>TODO#home</loc>
         <priority>0.9</priority>
     </url>
 
     <!-- Section: About Us -->
     <url>
-        <loc>https://ladybugs-aachen.de/#about</loc>
+        <loc>TODO#about</loc>
         <priority>0.8</priority>
     </url>
 
     <!-- Section: Events -->
     <url>
-        <loc>https://ladybugs-aachen.de/#events</loc>
+        <loc>TODO#events</loc>
         <priority>0.8</priority>
     </url>
 
     <!-- Section: Impressum -->
     <url>
-        <loc>https://ladybugs-aachen.de/impressum</loc>
+        <loc>TODOimpressum</loc>
         <lastmod>2025-06-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
