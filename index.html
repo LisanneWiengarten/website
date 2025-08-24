@@ -52,74 +52,104 @@
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EventSeries",
-    "name": "Filmmakers Aachen Events",
-    "description": "Irregular meetups and workshops for filmmakers and film enthusiasts in Aachen",
-    "organizer": {
-      "@type": "Organization",
-      "name": "Filmmakers Aachen"
-    },
-    "event": [
-      {
-        "@type": "Event",
-        "name": "September Meeting",
-        "description": "TODO meeting desc",
-        "speaker": "TODO speaker",
-        "startDate": "2025-09-11T19:00",
-        "endDate": "2025-09-11T21:00",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "location": {
-            "@type": "Place",
-            "name": "OecherLab",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Kapuzinergraben 19 D",
-                "addressLocality": "Aachen",
-                "postalCode": "52062",
-                "addressRegion": "Nordrhein-Westfalen",
-                "addressCountry": "Germany"
-            }
-        },
-         "organizer": {
-            "@type": "Organization",
-            "name": "Filmmakers Aachen",
-            "url": "https://www.instagram.com/filmmakersaachen/"
-        }
-      }
-    ]
-  }
-  </script>
   <script>
     async function loadAndDisplayEvents() {
-      // Get the events from the structured data in the HTML
-      const eventSeriesScript = document.querySelector('script[type="application/ld+json"]:nth-of-type(2)');
-      const eventSeries = JSON.parse(eventSeriesScript.textContent);
-      const events = eventSeries.event;
+      try {
+        // Load events from the JSON file
+        const response = await fetch('events.json');
+        const events = await response.json();
 
-      // Generate event cards for each event
-      const eventsContainer = document.getElementById('eventsContainer');
-      events.forEach(event => {
-        const eventCard = document.createElement('div');
-        eventCard.classList.add('col-md-4', 'mb-4');
-        eventCard.innerHTML = `
-                    <div class="card h-100 shadow-sm border-light">
-                        <div class="card-body">
-                            <h5 class="card-title">${event.name}</h5>
-                            <div class="event-date mb-3">
-                                <span class="badge badge-primary">${new Date(event.startDate).toLocaleDateString()}</span>
-                            </div>
-                            <p class="card-text">${event.description}</p>
-                            <p><strong>Datum:</strong> ${new Date(event.startDate).toLocaleDateString("de-DE", {weekday: "short", year: "numeric", month: "long", day: "numeric"})}</p>
-                            <p><strong>Uhrzeit:</strong> ${new Date(event.startDate).toLocaleTimeString("de-DE", { hour: '2-digit', minute: '2-digit', hour12: false })} - ${new Date(event.endDate).toLocaleTimeString("de-DE", { hour: '2-digit', minute: '2-digit', hour12: false })}</p>
-                            <p><strong>Location:</strong> ${event.location.name}</p>
-                        </div>
-                    </div>
-                `;
-        eventsContainer.appendChild(eventCard);
-      });
+        // Separate upcoming and past events
+        const upcomingEvents = events.filter(event => event.status === 'upcoming');
+        const pastEvents = events.filter(event => event.status === 'past').sort((a, b) => {
+          // Sort past events by date in descending order (newest first) so oldest appears on the right
+          return new Date(b.startDate) - new Date(a.startDate);
+        });
+
+        // Display upcoming events
+        const upcomingContainer = document.getElementById('upcomingEventsContainer');
+        if (upcomingEvents.length > 0) {
+          upcomingEvents.forEach(event => {
+            const eventCard = createEventCard(event, 'upcoming');
+            upcomingContainer.appendChild(eventCard);
+          });
+        } else {
+          upcomingContainer.innerHTML = '<div class="col-12 text-center"><p>Keine anstehenden Veranstaltungen geplant.</p></div>';
+        }
+
+        // Display past events
+        const pastContainer = document.getElementById('pastEventsContainer');
+        if (pastEvents.length > 0) {
+          pastEvents.forEach(event => {
+            const eventCard = createEventCard(event, 'past');
+            pastContainer.appendChild(eventCard);
+          });
+        } else {
+          pastContainer.innerHTML = '<div class="col-12 text-center"><p>Noch keine vergangenen Veranstaltungen.</p></div>';
+        }
+
+        // Update structured data for SEO
+        updateStructuredData(events);
+
+      } catch (error) {
+        console.error('Error loading events:', error);
+        document.getElementById('upcomingEventsContainer').innerHTML = '<div class="col-12 text-center"><p>Fehler beim Laden der Veranstaltungen.</p></div>';
+      }
+    }
+
+    function createEventCard(event, type) {
+      const eventCard = document.createElement('div');
+      eventCard.classList.add('col-md-4', 'mb-4');
+      
+      const badgeClass = type === 'upcoming' ? 'badge-primary' : 'badge-secondary';
+      const badgeText = type === 'upcoming' ? 'Anstehend' : 'Vergangen';
+      
+      eventCard.innerHTML = `
+        <div class="card h-100 shadow-sm border-light">
+          <div class="card-body">
+            <h5 class="card-title">${event.name}</h5>
+            <div class="event-date mb-3">
+              <span class="badge ${badgeClass}">${badgeText}</span>
+              <span class="badge badge-info ms-2">${new Date(event.startDate).toLocaleDateString()}</span>
+            </div>
+            <p class="card-text">${event.description}</p>
+            ${event.speaker ? `<p><strong>Speaker:</strong> ${event.speaker}</p>` : ''}
+            <p><strong>Datum:</strong> ${new Date(event.startDate).toLocaleDateString("de-DE", {weekday: "short", year: "numeric", month: "long", day: "numeric"})}</p>
+            <p><strong>Uhrzeit:</strong> ${new Date(event.startDate).toLocaleTimeString("de-DE", { hour: '2-digit', minute: '2-digit', hour12: false })} - ${new Date(event.endDate).toLocaleTimeString("de-DE", { hour: '2-digit', minute: '2-digit', hour12: false })}</p>
+            <p><strong>Location:</strong> ${event.location.name}</p>
+          </div>
+        </div>
+      `;
+      
+      return eventCard;
+    }
+
+    function updateStructuredData(events) {
+      // Create structured data for SEO
+      const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "EventSeries",
+        "name": "Filmmakers Aachen Events",
+        "description": "Irregular meetups and workshops for filmmakers and film enthusiasts in Aachen",
+        "organizer": {
+          "@type": "Organization",
+          "name": "Filmmakers Aachen"
+        },
+        "event": events
+      };
+
+      // Remove existing structured data script if it exists
+      const existingScript = document.querySelector('script[data-events-structured]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+
+      // Add new structured data script
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-events-structured', 'true');
+      script.textContent = JSON.stringify(structuredData);
+      document.head.appendChild(script);
     }
 
     document.addEventListener('DOMContentLoaded', loadAndDisplayEvents);
@@ -168,7 +198,15 @@
     <div class="row justify-content-center">
       <h2>Nächste Veranstaltungen</h2>
       <br />
-      <div class="row" id="eventsContainer"></div>
+      <div class="row" id="upcomingEventsContainer"></div>
+    </div>
+  </section>
+  
+  <section class="container mb-8 mb-lg-11" id="past-events">
+    <div class="row justify-content-center">
+      <h2>Vergangene Veranstaltungen</h2>
+      <br />
+      <div class="row" id="pastEventsContainer"></div>
     </div>
   </section>
   <section id="callforaction" class="container py-5">

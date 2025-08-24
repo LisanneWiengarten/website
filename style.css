@@ -32,7 +32,7 @@ body {
 }
 
 .content img {
-    max-width: 150px; /* Reduce size */
+    max-width: 450px; /* Increased size */
     height: auto;
 }
 
@@ -100,6 +100,47 @@ h3 {
 #eventsContainer {
     margin-top: 3em;
   }
+
+#upcomingEventsContainer {
+    margin-top: 3em;
+}
+
+#pastEventsContainer {
+    margin-top: 3em;
+}
+
+#past-events {
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+#past-events .row.justify-content-center {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+#past-events h2 {
+    color: #6c757d;
+    padding-top: 2rem;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+/* Past event cards styling */
+#pastEventsContainer .card {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+#pastEventsContainer .card:hover {
+    opacity: 1;
+}
+
+#pastEventsContainer .badge-secondary {
+    background-color: #6c757d !important;
+}
   
   /* Center the button horizontally */
   .event-button {
