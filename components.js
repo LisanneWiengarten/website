@@ -18,7 +18,7 @@ function createNavbar() {
                     <a class="nav-link" href="/#about">Über uns</a>
                     <a class="nav-link" href="/#events">Veranstaltungen</a>
                     <a class="nav-link" href="/#callforaction">Call for Speakers</a>
-                    <a class="nav-link" href="/impressum">Impressum</a>
+                    <a class="nav-link" href="/impressum.html">Impressum</a>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@ function createFooter() {
 function createCookieBanner() {
     return `
     <div id="cookie-banner" class="alert alert-light mb-0">
-        <span>Wir speichern keine Cookies :D  <a href="/impressum" class="alert-link">Weitere Informationen</a>.</span>
+        <span>Wir speichern keine Cookies :D  <a href="/impressum.html" class="alert-link">Weitere Informationen</a>.</span>
         <button id="accept-btn" class="btn btn-primary">OK</button>
     </div>`;
 }
@@ -85,4 +85,4 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.remove('active');
         }
     });
-}); 
+});
