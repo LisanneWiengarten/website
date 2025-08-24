@@ -4,7 +4,7 @@ function createNavbar() {
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="TODO" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                <img src="images/favicon-32x32.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
                 Filmmakers Aachen
             </a>
 

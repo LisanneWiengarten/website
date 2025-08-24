@@ -10,27 +10,27 @@
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="TODO">
+  <meta property="og:url" content="TODO URL">
   <meta property="og:title" content="Filmmakers Aachen - Network for film enthusiasts in Aachen">
   <meta property="og:description" content="Community für Filmschaffende und Filmenthusiasten in Aachen. Workshops, Vorträge und Networking. A community for filmmakers and film enthusiasts in Aachen.">
-  <meta property="og:image" content="TODO">
+  <meta property="og:image" content="images/FMA-Final.png">
 
   <!-- X (formerly Twitter) -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="TODO">
+  <meta property="twitter:url" content="TODO URL">
   <meta property="twitter:title" content="Filmmakers Aachen - Network for film enthusiasts in Aachen">
   <meta property="twitter:description" content="Community für Filmschaffende und Filmenthusiasten in Aachen. Workshops, Vorträge und Networking. A community for filmmakers and film enthusiasts in Aachen.">
-  <meta property="twitter:image" content="TODO">
+  <meta property="twitter:image" content="images/FMA-Final.png">
 
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon-32x32.png" type="image/png" sizes="32x32">
-  <meta name="description" content="Community für Filmschaffende und Filmenthusiasten in Aachen. Workshops, Vorträge und Networking. A community for filmmakers and film enthusiasts in Aachen.">
+  <meta name="description" content="Community von und für Filmschaffende und Filmenthusiasten in Aachen. Workshops, Vorträge und Networking. A community for filmmakers and film enthusiasts in Aachen.">
 
   <title>Filmmakers Aachen - Network for film enthusiasts in Aachen</title>
 
   <!-- Custom styles for this template -->
   <link href="style.css" rel="stylesheet">
-  <link rel="canonical" href="TODO" />
+  <link rel="canonical" href="localhost:8000" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -42,8 +42,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Filmmakers Aachen",
-    "url": "TODO",
-    "logo": "TODO",
+    "logo": "images/FMA-Final.png",
     "description": "Filmmakers Aachen - Network for film enthusiasts in Aachen",
     "address": {
       "@type": "PostalAddress",
@@ -59,7 +58,6 @@
     "@type": "EventSeries",
     "name": "Filmmakers Aachen Events",
     "description": "Irregular meetups and workshops for filmmakers and film enthusiasts in Aachen",
-    "url": "TODO",
     "organizer": {
       "@type": "Organization",
       "name": "Filmmakers Aachen",
@@ -69,8 +67,8 @@
       {
         "@type": "Event",
         "name": "September Meeting",
-        "description": "TODO",
-        "speaker": "TODO",
+        "description": "TODO meeting desc",
+        "speaker": "TODO speaker",
         "startDate": "2025-09-11T19:00",
         "endDate": "2025-09-11T21:00",
         "eventStatus": "https://schema.org/EventScheduled",
@@ -90,12 +88,6 @@
             "@type": "Organization",
             "name": "Filmmakers Aachen",
             "url": "https://www.instagram.com/filmmakersaachen/"
-        },
-        "offers": {
-          "@type": "Offer",
-          "availability": "https://schema.org/InStock",
-          "price": "0",
-          "priceCurrency": "EUR"
         }
       }
     ]
@@ -124,8 +116,6 @@
                             <p><strong>Datum:</strong> ${new Date(event.startDate).toLocaleDateString("de-DE", {weekday: "short", year: "numeric", month: "long", day: "numeric"})}</p>
                             <p><strong>Uhrzeit:</strong> ${new Date(event.startDate).toLocaleTimeString("de-DE", { hour: '2-digit', minute: '2-digit', hour12: false })} - ${new Date(event.endDate).toLocaleTimeString("de-DE", { hour: '2-digit', minute: '2-digit', hour12: false })}</p>
                             <p><strong>Location:</strong> ${event.location.name}</p>
-                            <a href="${event.url || '#'}" target="_blank" class="btn btn-primary event-button ${!event.url ? 'disabled' : ''}" ${!event.url ? 'aria-disabled="true"' : ''}>Anmeldung</a>
-                            <p class="event-keywords">${event.keywords}</p>
                         </div>
                     </div>
                 `;
@@ -144,7 +134,7 @@
   <section class="main-section">
     <div class="overlay"></div>
     <div class="content">
-      <img src="TODO" alt="Filmmakers Logo">
+      <img src="images/FMA-Final.png" alt="Filmmakers Logo">
       <div class="text-container">
         <h1>Filmmakers Aachen</h1>
         <h3>Netzwerk für Filmenthusiasten</h3>
@@ -161,14 +151,15 @@
           <div class="col-sm-10 col-md-8 col-lg-11">
             <h2>Über uns</h2>
             <p class="fs-8 mb-4 mb-lg-5 lh-lg text-lg-start fw-normal">
-              Bist du Filmemacher*in oder hast einfach eine große Leidenschaft für Kino und Filmkunst?
+              Bist du Filmemacher:in oder hast einfach eine große Leidenschaft für Kino und Filmkunst?
               Du liebst es, dich über kreative Ideen, Technik und spannende Projekte auszutauschen?
               Deine Community ist toll, aber manchmal fehlt dir der kreative Austausch mit anderen Filmschaffenden? Dann bist du bei uns genau richtig!
             </p>
             <p class="fs-8 mb-4 mb-lg-5 lh-lg text-lg-start fw-normal">
-             Wir möchten uns regelmäßig treffen, um über unsere Erfahrungen, Projekte und aktuelle Themen der Filmwelt zu sprechen. Dabei erwarten dich eine inspirierende Mischung aus Workshops, Talks und Networking – ein Raum für Kreativität, Austausch und neue Verbindungen.
+             Wir möchten uns regelmäßig treffen, um über unsere Erfahrungen, Projekte und aktuelle Themen der Filmwelt zu sprechen.
+              Dabei erwarten dich eine inspirierende Mischung aus Workshops, Talks und Networking – ein Raum für Kreativität, Austausch und neue Verbindungen.
             </p>
-            <p class="fs-8 mb-4 mb-lg-5 lh-lg text-lg-start fw-normal">Wir freuen uns auf Dich!</p>
+            <p class="fs-8 mb-4 mb-lg-5 lh-lg text-lg-start fw-normal">Unsere Veranstaltungen sind immer gratis und eine Anmeldung ist auch nicht erforderlich. Komm einfach vorbei, wir freuen uns auf Dich!</p>
           </div>
         </div>
       </div>
@@ -193,10 +184,10 @@
         <p>
           Bei unseren Treffen geht es vor allem um den Austausch - voneinander lernen, sich vernetzen und über Filme abnerden.
         </p>
-        TODO
+        TODO mail address
       </div>
       <div class="col-md-6 text-center mt-4 mt-md-0 d-flex justify-content-center">
-        <img src="TODO" class="img-fluid custom-img" alt="TODO">
+        <img src="TODO workshop image" class="img-fluid custom-img" alt="TODO">
       </div>
     </div>
   </section>
