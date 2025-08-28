@@ -29,6 +29,7 @@ body {
     max-width: 90%; /* Prevents excessive width */
     flex-wrap: wrap; /* Allow text to wrap */
     text-align: center;
+    min-width: 0;
 }
 
 .content img {
@@ -107,6 +108,8 @@ h3 {
 
 #pastEventsContainer {
     margin-top: 3em;
+    align-items: center;
+    justify-content: center;
 }
 
 #past-events {
